@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>customCheckbox</title>
+</head>
+<style>
+   [type=checkbox] {
+      visibility: hidden;
+      position: absolute
+   }
+
+   [type=checkbox]+label {
+      content: "";
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid green
+   }
+
+   [type=checkbox]:checked+label::before,
+   [type=checkbox]:checked+label::after {
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 4px;
+      background-color: green;
+      transform: rotate(30deg) translate(5px, 5px)
+   }
+
+   [type=checkbox]:checked+label::after {
+      width: 20px;
+      transform: rotate(-50deg) translate(-5px, 0px)
+   }
+</style>
+
+<body>
+   <input type="checkbox" id='checkHere'><label for='checkHere'></label>
+</body>
+
+</html>
